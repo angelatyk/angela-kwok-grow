@@ -1,0 +1,23 @@
+@import "variables";
+
+@mixin tablet {
+	@media screen and (min-width: $tablet-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media screen and (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin paddingSidesEvenly($size) {
+	padding-left: $size;
+	padding-right: $size;
+}
+
+@mixin paddingTopAndBottomEvenly($size) {
+	padding-top: $size;
+	padding-bottom: $size;
+}
