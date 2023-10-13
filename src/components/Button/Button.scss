@@ -1,0 +1,27 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.button {
+	width: 100%;
+	height: 4rem;
+	background-color: $primaryColour-accent;
+	color: $primaryColour-light;
+	border-radius: 0.4rem;
+	border: 0;
+	position: relative;
+	text-transform: uppercase;
+	cursor: pointer;
+
+	@include tablet {
+		width: 15rem;
+	}
+
+	&__icon {
+		position: absolute;
+		left: 0.8rem;
+	}
+
+	&:hover {
+		background-color: $primaryColour-dark;
+	}
+}

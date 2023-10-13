@@ -1,0 +1,39 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.header {
+	width: 100%;
+	background-color: $primaryColour-accent;
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+	align-items: center;
+	padding: 1.6rem;
+
+	@include tablet {
+		flex-direction: row;
+		justify-content: space-between;
+		@include paddingSidesEvenly(3.6rem);
+	}
+
+	@include desktop {
+		@include paddingSidesEvenly(10.8rem);
+	}
+}
+
+.nav-bar {
+	width: 100%;
+	display: flex;
+
+	@include tablet {
+		width: auto;
+	}
+}
+
+.nav-bar > a {
+	flex: 1;
+
+	@include tablet {
+		flex: 0;
+	}
+}
