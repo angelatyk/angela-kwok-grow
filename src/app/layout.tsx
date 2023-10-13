@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./layout.scss";
 
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import SessionProvider from "@/components/SessionProvider";
 import { getServerSession } from "next-auth";
-import SessionProvider from "../components/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +20,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<SessionProvider session={session}>{children}</SessionProvider>
+				<SessionProvider session={session}>
+					<Header />
+					{children}
+					<Footer />
+				</SessionProvider>
 			</body>
 		</html>
 	);
