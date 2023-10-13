@@ -1,0 +1,12 @@
+@import "../../styles/partials/mixins";
+
+.plant-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+
+	@include tablet {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
