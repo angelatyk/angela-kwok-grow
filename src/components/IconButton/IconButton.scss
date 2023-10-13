@@ -1,0 +1,23 @@
+.icon-button {
+	width: 2rem;
+	height: 2rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.add {
+	background-image: url(../../assets/icons/add_icon.png);
+}
+
+.delete {
+	background-image: url(../../assets/icons/delete_icon.png);
+}
+
+.done {
+	background-image: url(../../assets/icons/done_icon.png);
+}
+
+.favourite {
+	background-image: url(../../assets/icons/empty_favourite_icon.png);
+}
