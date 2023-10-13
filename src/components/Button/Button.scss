@@ -4,8 +4,8 @@
 .button {
 	width: 100%;
 	height: 4rem;
-	background-color: $primaryColour-accent;
-	color: $primaryColour-light;
+	background-color: $primary-colour-accent;
+	color: $primary-colour-light;
 	border-radius: 0.4rem;
 	border: 0;
 	position: relative;
@@ -22,6 +22,6 @@
 	}
 
 	&:hover {
-		background-color: $primaryColour-dark;
+		background-color: $primary-colour-dark;
 	}
 }
