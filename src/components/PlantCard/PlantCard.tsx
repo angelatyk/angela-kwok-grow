@@ -1,4 +1,5 @@
 import IconButton from "@/components/IconButton/IcontButton";
+import Image from "next/image";
 import "./PlantCard.scss";
 
 type Props = {
@@ -10,7 +11,7 @@ export default function PlantCard({ plant }: Props) {
 		<>
 			<article className="plant-card">
 				<div className="plant-card__image-container">
-					<img className="plant-card__image" src={plant?.default_image?.original_url} alt={plant.common_name + " Image"} />
+					<Image className="plant-card__image" src={plant?.default_image?.original_url} alt={plant.common_name + " Image"} width={0} height={0} sizes="100vw" />
 				</div>
 				<div className="plant-card__details-container">
 					<h2>{plant.common_name}</h2>
