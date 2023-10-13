@@ -1,7 +1,7 @@
+import Button from "@/components/Button/Button";
 import Logo from "@/components/Logo/Logo";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
-import Button from "../Button/Button";
 import "./Header.scss";
 
 export default async function Header() {

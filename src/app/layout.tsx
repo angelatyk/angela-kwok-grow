@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./layout.scss";
-
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import SessionProvider from "@/components/SessionProvider";
+import type { Metadata } from "next";
 import { getServerSession } from "next-auth";
+import { Inter } from "next/font/google";
+import "./layout.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
