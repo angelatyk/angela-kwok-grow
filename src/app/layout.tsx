@@ -20,7 +20,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 		<html lang="en">
 			<body className={inter.className}>
 				<SessionProvider session={session}>
-					<Header />
+					{session && <Header />}
 					{children}
 					<Footer />
 				</SessionProvider>
