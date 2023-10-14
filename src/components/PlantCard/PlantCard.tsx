@@ -72,7 +72,7 @@ const createDefaultUserTasks = async (userId: string, plantData: Plant) => {
 		const harvestDate = new Date();
 		harvestDate.setDate(today.getDate() + plantData.daysToHarvest);
 
-		const newTodoURL = "/api/todos/new";
+		const newTodoURL = "/api/todo/new";
 		// Add task for seeding
 		let seedingTask: Todo = {
 			title: `Seeding for ${plantData.name}`,
