@@ -2,7 +2,7 @@ import PlantCard from "@/components/PlantCard/PlantCard";
 import "./catalog.scss";
 
 async function getPlantList() {
-	const apiKey = "sk-1R0b65270bce208332427";
+	const apiKey = process.env.NEXT_PUBLIC_PERENUAL_API_KEY;
 	const perenualApiURL = "https://perenual.com/api/species-list?key=";
 	const response = await fetch(`${perenualApiURL}${apiKey}&edible=1`);
 	if (!response.ok) {
