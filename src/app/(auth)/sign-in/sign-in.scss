@@ -1,0 +1,17 @@
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/mixins";
+
+.sign-in {
+	width: 100vw;
+	height: 100vh;
+	background-color: $primary-colour-accent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1.6rem;
+
+	@include tablet {
+		gap: 2.4rem;
+	}
+}

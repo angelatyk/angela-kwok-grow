@@ -23,5 +23,11 @@
 
 	&:hover {
 		background-color: $primary-colour-dark;
+		color: $primary-colour-light;
 	}
+}
+
+.sign-in-button {
+	background-color: $primary-colour-light;
+	color: $primary-colour-accent;
 }
