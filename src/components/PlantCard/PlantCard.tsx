@@ -1,6 +1,8 @@
 "use client";
 
 import IconButton from "@/components/IconButton/IcontButton";
+import { Plant } from "@/types/Plant";
+import { Todo } from "@/types/Todo";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import "./PlantCard.scss";
@@ -8,25 +10,6 @@ import "./PlantCard.scss";
 type Props = {
 	plant: any;
 };
-
-interface Plant {
-	id?: string;
-	externalId: string;
-	name: string;
-	description: string;
-	imageUrl: string;
-	wateringFrequency: string;
-	harvestSeason: string;
-	daysToGerminate: number;
-	daysToHarvest: number;
-}
-
-interface Todo {
-	title: string;
-	dueOn: Date;
-	userId: string;
-	plantId: string;
-}
 
 const getPlantData = async (id: string) => {
 	const dbPlantResponse = await fetch(`/api/plant/details/${id}`);
