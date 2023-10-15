@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import SessionProvider from "@/components/SessionProvider";
+import ToastProvider from "@/components/ToastProvider";
 import type { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { Inter } from "next/font/google";
@@ -22,6 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 				<SessionProvider session={session}>
 					{session && <Header />}
 					{children}
+					<ToastProvider />
 					<Footer />
 				</SessionProvider>
 			</body>
