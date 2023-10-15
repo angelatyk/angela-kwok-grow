@@ -16,7 +16,7 @@
 	transition: border-width 0.1s linear;
 
 	&:hover {
-		border-width: 0.2rem;
+		border-width: 0.3rem;
 		background-color: rgba($primary-colour-medium, 0.6);
 	}
 }
@@ -45,4 +45,5 @@ input.checkbox {
 	width: 2.5rem;
 	height: 2.5rem;
 	accent-color: $third-colour-accent;
+	cursor: pointer;
 }
