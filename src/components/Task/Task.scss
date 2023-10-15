@@ -1,0 +1,48 @@
+@import "../../styles/partials/mixins";
+
+.task-card {
+	width: 100%;
+	min-height: 5rem;
+	background-color: rgba($primary-colour-medium, 0.4);
+	color: $primary-colour-accent;
+	border-radius: 0.4rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem 3rem;
+
+	border: solid 0 $third-colour-accent;
+	transition: border-width 0.1s linear;
+
+	&:hover {
+		border-width: 0.2rem;
+		background-color: rgba($primary-colour-medium, 0.6);
+	}
+}
+
+.task-info {
+	flex: 1;
+
+	&__due-date {
+		color: $secondary-colour-accent;
+		font-size: 1.2rem;
+	}
+
+	&__title {
+		color: $primary-colour-accent;
+		font-size: 1.6rem;
+		font-weight: 500;
+	}
+}
+
+.completed {
+	text-decoration: line-through;
+	background-color: rgba($disable-colour, 0.4);
+}
+
+input.checkbox {
+	width: 2.5rem;
+	height: 2.5rem;
+	accent-color: $third-colour-accent;
+}
