@@ -31,6 +31,17 @@
 		order: 0;
 		margin: 0;
 	}
+
+	&::after {
+		display: block;
+		content: "";
+		border-bottom: solid 0.3rem $third-colour-accent;
+		transform: scaleX(0);
+		transition: transform 250ms ease-in-out;
+	}
+	&:hover::after {
+		transform: scaleX(1);
+	}
 }
 
 .header > .avatar {
