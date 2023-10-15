@@ -5,7 +5,8 @@
 	width: 100%;
 	background-color: $primary-colour-accent;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	flex-wrap: wrap;
 	gap: 1.6rem;
 	align-items: center;
 	padding: 1.6rem;
@@ -14,6 +15,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		@include paddingSidesEvenly(3.6rem);
+		@include paddingTopAndBottomEvenly(2rem);
 	}
 
 	@include desktop {
@@ -21,12 +23,33 @@
 	}
 }
 
+.header > .logo {
+	order: 1;
+	margin: auto;
+
+	@include tablet {
+		order: 0;
+		margin: 0;
+	}
+}
+
+.header > .avatar {
+	order: 2;
+
+	@include tablet {
+		order: 0;
+	}
+}
+
 .nav-bar {
 	width: 100%;
 	display: flex;
+	order: 3;
 
 	@include tablet {
 		width: auto;
+		order: 0;
+		margin-left: auto;
 	}
 }
 

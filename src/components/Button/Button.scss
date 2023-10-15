@@ -32,3 +32,7 @@
 	background-color: $primary-colour-light;
 	color: $primary-colour-accent;
 }
+
+.--active {
+	background-color: rgba($primary-colour-medium, 0.6);
+}
