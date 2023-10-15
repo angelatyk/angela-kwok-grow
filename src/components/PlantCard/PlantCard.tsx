@@ -5,6 +5,7 @@ import { Plant } from "@/types/Plant";
 import { Todo } from "@/types/Todo";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import { toast } from "react-toastify";
 import "./PlantCard.scss";
 
 type Props = {
@@ -88,6 +89,9 @@ const createDefaultUserTasks = async (userId: string, plantData: Plant) => {
 		await fetch(newTodoURL, {
 			method: "POST",
 			body: JSON.stringify(harvestTask),
+		});
+		toast.success(`${plantData.name} was successfully added to your Todo List!`, {
+			hideProgressBar: true,
 		});
 	} catch (error) {
 		throw new Error(`Error adding tasks: ${error}`);
