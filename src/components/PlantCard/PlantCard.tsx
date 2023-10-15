@@ -56,10 +56,11 @@ const createDefaultUserTasks = async (userId: string, plantData: Plant) => {
 		const harvestDate = new Date();
 		harvestDate.setDate(today.getDate() + plantData.daysToHarvest);
 
-		const newTodoURL = "/api/todo/new";
+		const newTodoURL = "/api/todo";
 		// Add task for seeding
 		let seedingTask: Todo = {
 			title: `Seeding for ${plantData.name}`,
+			completed: false,
 			dueOn: today,
 			userId: userId,
 			plantId: plantData.id!,
@@ -71,6 +72,7 @@ const createDefaultUserTasks = async (userId: string, plantData: Plant) => {
 		// Add task for germination
 		let germinationTask: Todo = {
 			title: `Germination complete for ${plantData.name}`,
+			completed: false,
 			dueOn: germinationDate,
 			userId: userId,
 			plantId: plantData.id!,
@@ -82,6 +84,7 @@ const createDefaultUserTasks = async (userId: string, plantData: Plant) => {
 		// Add task for harvest
 		let harvestTask: Todo = {
 			title: `Harvest time for ${plantData.name}`,
+			completed: false,
 			dueOn: harvestDate,
 			userId: userId,
 			plantId: plantData.id!,
