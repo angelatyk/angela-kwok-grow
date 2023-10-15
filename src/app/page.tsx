@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 
 export default function Home() {
 	const { data: session } = useSession();
+	const userName = session?.user.name ? session.user.name.split(" ")[0] : "";
 
 	if (!session) {
 		redirect("/sign-in");
@@ -13,7 +14,7 @@ export default function Home() {
 
 	return (
 		<main>
-			<h1>Welcome {session?.user?.name}!</h1>
+			<h1 className="headline-padding">Welcome {userName}!</h1>
 			<Button label="Sign Out" buttonType="button" actionFunction={() => signOut()} />
 		</main>
 	);
