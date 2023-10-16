@@ -101,10 +101,44 @@ const createDefaultUserTasks = async (userId: string, plantData: Plant) => {
 	}
 };
 
+const createPlantFavourite = async (userId: string, plantData: Plant) => {
+	try {
+		const addFavouriteURL = `/api/user/${userId}/favourites`;
+		await fetch(addFavouriteURL, {
+			method: "POST",
+			body: JSON.stringify(plantData),
+		});
+	} catch (error) {
+		throw new Error(`Error adding user favourite: ${error}`);
+	}
+};
+
+const deletePlantFavourite = async (userId: string, plantData: Plant) => {
+	try {
+		const deleteFavouriteURL = `/api/user/${userId}/favourites`;
+		await fetch(deleteFavouriteURL, {
+			method: "DELETE",
+			body: JSON.stringify(plantData),
+		});
+	} catch (error) {
+		throw new Error(`Error deleting user favourite: ${error}`);
+	}
+};
+
 export default function PlantCard({ plant }: Props) {
 	const { data: session } = useSession();
 
 	const handleAddPlantToList = async (id: string) => {
+		const plantData = await getPlantData(id);
+		createDefaultUserTasks(session!.user.id, plantData);
+	};
+
+	const handleAddPlantToFavourite = async (id: string) => {
+		const plantData = await getPlantData(id);
+		createPlantFavourite(session!.user.id, plantData);
+	};
+
+	const deletePlantFavourite = async (id: string) => {
 		const plantData = await getPlantData(id);
 		createDefaultUserTasks(session!.user.id, plantData);
 	};
