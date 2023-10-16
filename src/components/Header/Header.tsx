@@ -1,11 +1,11 @@
 "use client";
 
+import Avatar from "@/components/Avatar/Avatar";
 import Button from "@/components/Button/Button";
 import Logo from "@/components/Logo/Logo";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Avatar from "../Avatar/Avatar";
 import "./Header.scss";
 
 export default function Header() {
@@ -18,8 +18,8 @@ export default function Header() {
 			{session && (
 				<>
 					<nav className="nav-bar">
-						<Link href="/todo">
-							<Button label="Todo" buttonType="button" className={pathname.includes("/todo") ? "--active" : ""} />
+						<Link href="/">
+							<Button label="Todo" buttonType="button" className={pathname == "/" ? "--active" : ""} />
 						</Link>
 						<Link href="/catalog">
 							<Button label="Catalog" buttonType="button" className={pathname.includes("/catalog") ? "--active" : ""} />
