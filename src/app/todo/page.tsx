@@ -9,7 +9,7 @@ import "./todo.scss";
 export default function TodoList() {
 	const { data: session } = useSession();
 	const userId = session?.user.id;
-	const [todoList, setTodoList] = useState<Todo[] | null>(null);
+	const [todoList, setTodoList] = useState<Todo[]>([]);
 
 	useEffect(() => {
 		if (userId) {
@@ -34,7 +34,16 @@ export default function TodoList() {
 		<>
 			<main>
 				<h1 className="headline-padding">Todo List</h1>
-				{userId && <div className="todo-list">{todoList && todoList.map((task: Todo) => <Task key={task.id} task={task} refreshTodoListFunction={getTodoList} />)}</div>}
+				{todoList.filter((task: Todo) => !task.completed).length == 0 && (
+					<p className="no-tasks">You do not have any incomplete tasks! Create some by browsing the Catalog and adding plants to your garden!</p>
+				)}
+				{userId && todoList.length > 0 && (
+					<div className="todo-list">
+						{todoList.map((task: Todo) => (
+							<Task key={task.id} task={task} refreshTodoListFunction={getTodoList} />
+						))}
+					</div>
+				)}
 			</main>
 		</>
 	);
