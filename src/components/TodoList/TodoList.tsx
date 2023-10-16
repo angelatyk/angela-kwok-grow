@@ -4,7 +4,7 @@ import Task from "@/components/Task/Task";
 import { Todo } from "@/types/Todo";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import "./todo.scss";
+import "./TodoList.scss";
 
 export default function TodoList() {
 	const { data: session } = useSession();
