@@ -32,8 +32,8 @@ export default function TodoList() {
 
 	return (
 		<>
-			<main>
-				<h1 className="headline-padding">Todo List</h1>
+			<section>
+				<h1>Todo List</h1>
 				{todoList.filter((task: Todo) => !task.completed).length == 0 && (
 					<p className="no-tasks">You do not have any incomplete tasks! Create some by browsing the Catalog and adding plants to your garden!</p>
 				)}
@@ -44,7 +44,7 @@ export default function TodoList() {
 						))}
 					</div>
 				)}
-			</main>
+			</section>
 		</>
 	);
 }

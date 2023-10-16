@@ -4,6 +4,7 @@ import Button from "@/components/Button/Button";
 import TodoList from "@/components/TodoList/TodoList";
 import { signOut, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+import "./homepage.scss";
 
 export default function Home() {
 	const { data: session } = useSession();
@@ -15,7 +16,7 @@ export default function Home() {
 
 	return (
 		<main>
-			<h1 className="headline-padding">Welcome {userName}!</h1>
+			<h1 className="headline-padding welcome-heading">Welcome {userName}!</h1>
 			<TodoList />
 			<Button label="Sign Out" buttonType="button" actionFunction={() => signOut()} />
 		</main>
