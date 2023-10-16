@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/Button/Button";
-import PlantCard from "@/components/PlantCard/PlantCard";
+import PlantList from "@/components/PlantList/PlantList";
 import { useEffect, useState } from "react";
 import "./catalog.scss";
 
@@ -32,7 +32,7 @@ export default function Catalog() {
 	return (
 		<main>
 			<h1 className="headline-padding">Catalog</h1>
-			<div className="plant-list">{plantList && plantList.map((plant: any, index: number) => <PlantCard key={index} plant={plant} />)}</div>
+			<PlantList plantList={plantList} />
 			{count <= 100 && <Button label={loading ? "Loading..." : "Load More"} buttonType="button" className="load-more-button" actionFunction={() => setCount(count + 1)} />}
 		</main>
 	);
