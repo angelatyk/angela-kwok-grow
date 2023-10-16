@@ -24,6 +24,9 @@ export default function Header() {
 						<Link href="/catalog">
 							<Button label="Catalog" buttonType="button" className={pathname.includes("/catalog") ? "--active" : ""} />
 						</Link>
+						<Link href="/api/auth/signout">
+							<Button label="Sign Out" buttonType="button" />
+						</Link>
 					</nav>
 					<Avatar avatarImage={session.user.image} avatarAlt={session.user.name + " Profile Picture"} />
 				</>
