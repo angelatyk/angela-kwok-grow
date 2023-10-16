@@ -10,3 +10,13 @@
 		flex-wrap: wrap;
 	}
 }
+
+.load-more-button {
+	margin: 0 auto;
+	display: block;
+	margin-top: 2.4rem;
+
+	@include tablet {
+		margin-top: 3.6rem;
+	}
+}
